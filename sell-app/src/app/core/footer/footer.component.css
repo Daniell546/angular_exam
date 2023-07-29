@@ -1,0 +1,23 @@
+footer {
+    background-color: #050912;
+    color:#fff;
+    margin-top: 1em;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 1366px;
+    cursor: pointer;
+    padding-bottom: auto;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+footer span {
+    font-size: 1.5em;
+}

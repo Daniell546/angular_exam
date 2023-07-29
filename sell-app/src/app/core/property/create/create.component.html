@@ -1,0 +1,63 @@
+<form class="form">
+  <p class="form-title">Create an offer for your own property!</p>
+  <div class="input-container">
+    <input placeholder="Type: rent/sell..." type="purpose">
+  </div>
+  <div class="input-container">
+    <input placeholder="Enter valid imageUrl..." type="imageUrl">
+  </div>
+  <div class="input-container">
+    <input placeholder="Location..." type="location">
+  </div>
+  <div class="input-container">
+    <input placeholder="Price..." type="price">
+  </div>
+  <!-- <div class="input-container">
+    <label for="type">Type of property</label>
+    <select name="type" aria-placeholder="type" id="type">
+      <option value="apartment">apartment</option>
+      <option value="house">house</option>
+      <option value="shop">shop</option>
+      <option value="store">store</option>
+    </select>
+</div> -->
+<h3>Type:</h3>
+<div class="wrapper">
+  <div class="option">
+    <input class="input" type="radio" name="btn" value="Apartment" checked="">
+    <div class="btn">
+      <span class="span">Apartment</span>
+    </div>
+  </div>
+  <div class="option">
+    <input class="input" type="radio" name="btn" value="House">
+    <div class="btn">
+      <span class="span">House</span>
+    </div>  </div>
+    <div class="option">
+      <input class="input" type="radio" name="btn" value="Store">
+      <div class="btn">
+        <span class="span">Store</span>
+      </div>  </div>
+  <div class="option">
+    <input class="input" type="radio" name="btn" value="Shop">
+    <div class="btn">
+      <span class="span">Shop</span>
+    </div>  
+  </div>
+</div>
+  
+
+  <br>
+  <h3>Description:</h3>
+  <textarea name="description" id="description" cols="40" rows="3" placeholder="description">
+  </textarea>
+  
+  <button class="submit" type="submit">
+    Create
+  </button>
+
+  <p class="signup-link">
+    <a routerLink="/home">Back to home page</a>
+  </p>
+</form>
