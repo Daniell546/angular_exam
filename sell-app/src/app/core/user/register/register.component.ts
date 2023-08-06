@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { DEFAULT_EMAIL_DOMAINS } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-register',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+  appEmailDomains = DEFAULT_EMAIL_DOMAINS;
+
+  register(form: NgForm) {
+
+  }
 }
