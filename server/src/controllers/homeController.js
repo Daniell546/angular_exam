@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const homeManager = require('../managers/homeManager');
+// const homeManager = require('../managers/homeManager');
 
 
-
+router.get('/home', (req, res) => {
+    res.send('hello')
+})
 
 
 

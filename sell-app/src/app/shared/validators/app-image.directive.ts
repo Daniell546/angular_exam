@@ -6,20 +6,20 @@ import {
   Validator,
   ValidatorFn,
 } from '@angular/forms';
-import { appEmailValidator } from './app-email-validator';
+import { appImageValidator } from './app-image-validator';
 
 @Directive({
-  selector: '[appEmail]',
+  selector: '[appImage]',
   providers: [
     {
       provide: NG_VALIDATORS,
-      useExisting: AppEmailDirective,
+      useExisting: AppImageDirective,
       multi: true,
     },
   ],
 })
-export class AppEmailDirective implements Validator, OnChanges {
-  @Input() appEmail: string[] = [];
+export class AppImageDirective implements Validator, OnChanges {
+  @Input() appImage: string[] = [];
 
   validator: ValidatorFn = () => null;
 
@@ -31,10 +31,10 @@ export class AppEmailDirective implements Validator, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const currentEmailChanges = changes['appEmail'];
+    const currentEmailChanges = changes['appImage'];
 
     if (currentEmailChanges) {
-      this.validator = appEmailValidator(currentEmailChanges.currentValue);
+      this.validator = appImageValidator(currentEmailChanges.currentValue);
     }
   }
 }

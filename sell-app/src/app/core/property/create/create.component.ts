@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { DEFAULT_PROTOCOLS } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-create',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class CreateComponent {
 
+  appProtocols = DEFAULT_PROTOCOLS;
+  create(form:NgForm) {
+
+    // if(form.invalid) return;
+
+    console.log(form.value);
+    
+  }
 }

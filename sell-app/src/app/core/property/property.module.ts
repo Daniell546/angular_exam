@@ -3,20 +3,18 @@ import { CommonModule } from '@angular/common';
 import { CreateComponent } from './create/create.component';
 import { RouterModule } from '@angular/router';
 import { PropertyRoutingModule } from './property-routing.module';
-
-
+import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    CreateComponent,
-  ],
+  declarations: [CreateComponent],
   imports: [
     CommonModule,
     PropertyRoutingModule,
-    RouterModule
+    RouterModule,
+    SharedModule,
+    FormsModule,
   ],
-  exports: [
-    CreateComponent,
-  ]
+  exports: [CreateComponent],
 })
-export class PropertyModule { }
+export class PropertyModule {}
