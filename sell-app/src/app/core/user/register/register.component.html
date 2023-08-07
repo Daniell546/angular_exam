@@ -6,8 +6,8 @@
        
    </div>
    <ng-container *ngIf="inputEmail.touched">
-     <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required</p>
-     <p class="error" *ngIf="inputEmail.errors?.['appEmailValidator']">Email is not valid</p>
+     <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required!</p>
+     <p class="error" *ngIf="inputEmail.errors?.['appEmailValidator']">Email is not valid!</p>
     </ng-container>
 
     <!-- Telephone -->
@@ -16,7 +16,7 @@
   </div>
 
   <ng-container *ngIf="inputTel.touched">
-    <p class="error" *ngIf="inputTel.errors?.['required']">Phonenumber is required</p>
+    <p class="error" *ngIf="inputTel.errors?.['required']">Phonenumber is required!</p>
     <!-- <p class="error" *ngIf="inputTel.errors?.['maxlength']">Numbers must be belou 15</p> -->
    </ng-container>
 
@@ -24,8 +24,8 @@
    <div class="input-container">
        <input placeholder="Enter password" type="password" name="password" required minlength="6" ngModel #inputPassword="ngModel">
        <ng-container *ngIf="inputPassword.touched">
-        <p class="error" *ngIf="inputPassword.errors?.['required']">Password is required</p>
-        <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password must have at least 6 characters</p>
+        <p class="error" *ngIf="inputPassword.errors?.['required']">Password is required!</p>
+        <p class="error" *ngIf="inputPassword.errors?.['minlength']">Password must have at least 6 characters!</p>
        </ng-container>
        
      </div>
@@ -34,7 +34,7 @@
      <div class="input-container">
         <input placeholder="Enter password again" type="password" name="rePass">
       </div>
-      <button class="submit" type="submit">
+      <button class="submit" >
      Sign up
    </button>
 

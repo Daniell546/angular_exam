@@ -28,7 +28,6 @@ export class AppEmailDirective implements Validator, OnChanges {
     const currentEmailChanges = changes['appEmail'];
     
     if(currentEmailChanges) {
-      console.log(currentEmailChanges);
       
       this.validator = appEmailValidator(currentEmailChanges.currentValue);
     }

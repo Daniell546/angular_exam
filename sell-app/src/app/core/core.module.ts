@@ -20,6 +20,6 @@ import { PropertyModule } from './property/property.module';
     PropertyRoutingModule,
     RouterModule,
   ],
-  exports: [NavigationComponent, FooterComponent, UserModule, PropertyModule],
+  exports: [NavigationComponent, FooterComponent, UserModule, PropertyModule, UserModule],
 })
 export class CoreModule {}

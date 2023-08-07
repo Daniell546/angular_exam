@@ -12,6 +12,7 @@ export class RegisterComponent {
   appEmailDomains = DEFAULT_EMAIL_DOMAINS;
 
   register(form: NgForm) {
-
+    console.log(form.value);
+    
   }
 }
