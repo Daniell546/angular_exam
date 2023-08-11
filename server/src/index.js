@@ -1,3 +1,4 @@
+global.__basedir = __dirname;
 const app = require('express')();
 require('dotenv').config()
 const cors = require('cors');
@@ -8,10 +9,7 @@ const dbConfig = require("./config/dbConfig");
 const config = require('./config/config');
 
 expressConfig(app);
-app.use(cors({
-    origin: config.origin,
-    credentials: true
-  }));
+app.use(cors());
 dbConfig()
     .then(() => console.log('DB connected!'))
     .catch((err) => console.log('DB error! ', err.message))
@@ -19,4 +17,4 @@ dbConfig()
 app.use(routes);
 
 
-app.listen(config.port, console.log(`Listening on port ${config.port}!`));
+app.listen(3000, console.log(`Listening on port ${config.port}!`));
