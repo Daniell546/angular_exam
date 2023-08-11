@@ -11,6 +11,7 @@ import { UserRoutingModule } from './user/user-routing.module';
 import { PropertyRoutingModule } from './property/property-routing.module';
 import { UserModule } from './user/user.module';
 import { PropertyModule } from './property/property.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [NavigationComponent, FooterComponent, HomeComponent],
@@ -19,6 +20,7 @@ import { PropertyModule } from './property/property.module';
     UserRoutingModule,
     PropertyRoutingModule,
     RouterModule,
+    HttpClientModule,
   ],
   exports: [NavigationComponent, FooterComponent, UserModule, PropertyModule, UserModule],
 })
