@@ -6,8 +6,8 @@ const propertyController = require('./controllers/propertyController');
 router.use(homeController);
 // router.use('/user', userController)
 router.use('/property', propertyController);
-router.use('*', (req, res) => {
-    res.render('404');
-})
+// router.use('*', (req, res) => {
+//     res.render('404');
+// })
 
 module.exports = router;

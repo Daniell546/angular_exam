@@ -13,10 +13,8 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiServiceService){}
 
   ngOnInit(): void {
-    this.apiService.getProperty().subscribe(prop => {
-      console.log('test');
-      console.log(prop);
-      
+    this.apiService.getProperty().subscribe((prop) => {
+      console.log({prop});
     })
   }
 }

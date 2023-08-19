@@ -2,11 +2,9 @@ const express = require("express");
 const router = express.Router();
 const propertyManager = require("../managers/propertyManager");
 
-router.get('/', async (req, res) => {
-    const properties = await propertyManager.getProperties().lean()
-    console.log(properties, '...');
+router.get('/',  (req, res, next) => {
+    let properties =  propertyManager.getProperties().lean().then(prop => res.json(prop)); 
     return properties;
 })
-
 
 module.exports = router;

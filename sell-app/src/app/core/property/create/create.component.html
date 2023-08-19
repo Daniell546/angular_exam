@@ -1,35 +1,90 @@
 <form class="form" #form="ngForm" (ngSubmit)="create(form)">
   <p class="form-title">Create an offer for your own property!</p>
+
   <div class="input-container">
-    <input placeholder="Type: rent/sell..." type="purpose" name="purpose" ngModel #inputType="ngModel" required >
+    <input
+    type="radio"
+    id="rent"
+    value="rent"
+    name="purpose"
+    ngModel
+    #inputType="ngModel"
+    required
+    />
+    <label for="rent" id="rentLabel">rent</label>
+    <input
+    type="radio"
+    id="sell"
+    value="sell"
+    name="purpose"
+    ngModel
+    #inputType="ngModel"
+    required
+    />
+    <label for="sell">sell</label>
   </div>
   <ng-container *ngIf="inputType.touched">
-    <p class="error" *ngIf="inputType.errors?.['required']">Type is required!</p>
+    <p class="error" *ngIf="inputType.errors?.['required']">
+      Purpose is required!
+    </p>
   </ng-container>
 
   <div class="input-container">
-    <input placeholder="Enter valid imageUrl..." type="imageUrl" name="image" #inputImage="ngModel" required ngModel [appImage]="appProtocols">
+    <input
+      placeholder="Enter valid imageUrl..."
+      type="imageUrl"
+      name="image"
+      #inputImage="ngModel"
+      required
+      ngModel
+      [appImage]="appProtocols"
+    />
   </div>
   <ng-container *ngIf="inputImage.touched">
-    <p class="error" *ngIf="inputImage.errors?.['required']">Image is required!</p>
-    <p class="error" *ngIf="inputImage.errors?.['appImageValidator']">URL must exist</p>
+    <p class="error" *ngIf="inputImage.errors?.['required']">
+      Image is required!
+    </p>
+    <p class="error" *ngIf="inputImage.errors?.['appImageValidator']">
+      URL must exist
+    </p>
   </ng-container>
-  
+
   <div class="input-container">
-    <input placeholder="Location..." type="location" name="location" ngModel #inputLocation="ngModel" required>
+    <input
+      placeholder="Location..."
+      type="location"
+      name="location"
+      ngModel
+      #inputLocation="ngModel"
+      required
+    />
   </div>
 
   <ng-container *ngIf="inputLocation.touched">
-    <p class="error" *ngIf="inputLocation.errors?.['required']">Location is required!</p>
+    <p class="error" *ngIf="inputLocation.errors?.['required']">
+      Location is required!
+    </p>
   </ng-container>
 
   <div class="input-container">
-    <input placeholder="Price..." type="price" name="price" ngModel #inputPrice="ngModel" appPrice required>
+    <input
+      placeholder="Price..."
+      type="price"
+      name="price"
+      ngModel
+      #inputPrice="ngModel"
+      appPrice
+      required
+    />
   </div>
 
   <ng-container *ngIf="inputPrice.touched">
-    <p class="error" *ngIf="inputPrice.errors?.['required']">Price is required!</p>
-    <p class="error" *ngIf="inputPrice.errors?.['appPriceValidator']">Price must be positive number!</p>
+    <p class="error" *ngIf="inputPrice.errors?.['required']">
+      Price is required!
+    </p>
+    <p class="error" *ngIf="inputPrice.errors?.['appPriceValidator']">
+      Price must be positive number!
+    </p>
   </ng-container>
   <!-- <div class="input-container">
     <label for="type">Type of property</label>
@@ -40,46 +95,59 @@
       <option value="store">store</option>
     </select>
 </div> -->
-<h3>Type:</h3>
-<div class="wrapper">
-  <div class="option">
-    <input class="input" type="radio" name="btn" value="Apartment" >
-    <div class="btn">
-      <span class="span">Apartment</span>
-    </div>
-  </div>
-  <div class="option">
-    <input class="input" type="radio" name="btn" value="House">
-    <div class="btn">
-      <span class="span">House</span>
-    </div>  </div>
+  <h3>Type:</h3>
+  <div class="wrapper">
     <div class="option">
-      <input class="input" type="radio" name="btn" value="Store">
+      <input class="input" type="radio" name="btn" value="Apartment" />
+      <div class="btn">
+        <span class="span">Apartment</span>
+      </div>
+    </div>
+    <div class="option">
+      <input class="input" type="radio" name="btn" value="House" />
+      <div class="btn">
+        <span class="span">House</span>
+      </div>
+    </div>
+    <div class="option">
+      <input class="input" type="radio" name="btn" value="Store" />
       <div class="btn">
         <span class="span">Store</span>
-      </div>  </div>
-  <div class="option">
-    <input class="input" type="radio" name="btn" value="Shop">
-    <div class="btn">
-      <span class="span">Shop</span>
-    </div>  
+      </div>
+    </div>
+    <div class="option">
+      <input class="input" type="radio" name="btn" value="Shop" />
+      <div class="btn">
+        <span class="span">Shop</span>
+      </div>
+    </div>
   </div>
-</div>
-  
 
-  <br>
+  <br />
   <h3>Description:</h3>
-  <textarea name="description" id="description" cols="40" rows="3" placeholder="description" ngModel #inputDescription="ngModel" required minlength="10">
+  <textarea
+    name="description"
+    id="description"
+    cols="40"
+    rows="3"
+    placeholder="description"
+    ngModel
+    #inputDescription="ngModel"
+    required
+    minlength="10"
+  >
   </textarea>
-  
+
   <ng-container *ngIf="inputDescription.touched">
-    <p class="error" *ngIf="inputDescription.errors?.['required']">Description is required!</p>
-    <p class="error" *ngIf="inputDescription.errors?.['minlength']">Description must have at least 10 characters</p>
+    <p class="error" *ngIf="inputDescription.errors?.['required']">
+      Description is required!
+    </p>
+    <p class="error" *ngIf="inputDescription.errors?.['minlength']">
+      Description must have at least 10 characters
+    </p>
   </ng-container>
 
-  <button class="submit" type="submit">
-    Create
-  </button>
+  <button class="submit" type="submit">Create</button>
 
   <p class="signup-link">
     <a routerLink="/home">Back to home page</a>
